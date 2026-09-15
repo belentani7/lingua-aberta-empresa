@@ -17,7 +17,7 @@ jobs:
       - name: Install
         run: |
           if [ -f package.json ]; then npm ci; fi
-          if [ -f pnpm-lock.yaml ]; then pnpm install --frozen-lockfile; fi
+          if [ -f pnpm-lock.yaml ]; then corepack enable && pnpm install --frozen-lockfile; fi
       - name: Lint
         run: |
           if [ -f package.json ] && grep -q '"lint"' package.json; then npm run lint; fi
@@ -38,6 +38,7 @@ jobs:
       - name: Install
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
           if [ -f pyproject.toml ]; then pip install -e .; fi
       - name: Test
         run: |
