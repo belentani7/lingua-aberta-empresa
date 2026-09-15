@@ -42,4 +42,4 @@ jobs:
           if [ -f pyproject.toml ]; then pip install -e .; fi
       - name: Test
         run: |
-          if [ -d tests ]; then python -m pytest -q; fi
+          if [ -d tests ]; then python -m pytest -q || [ $? -eq 5 ]; fi
