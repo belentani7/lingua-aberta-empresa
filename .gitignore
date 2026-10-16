@@ -1,22 +1,28 @@
-node_modules
-.next
-.env*.local
-.vercel
+# Git Ignore
 
-# remediacion 2026-09-14
-node_modules/
-.env
-.env.*
-.mimosa/
-__pycache__/
-.vercel/
-*.log
+# Dependencies
+/node_modules/
+/.pnp/
+/package-lock.json
 
-# IA agent states
-.cline/
-.opencode/
-.mcp/
-.zen/
-.mimocode/
-.zcode/
-*agent_state*
+# Runtime stuff
+/.next/
+/out/
+
+# Build artifacts
+/dist/
+/.out/
+
+# Environment
+/.env.local
+/.env.*.local
+
+# IDE
+/.vscode/
+/.ts arqueiro/
+
+# Logs
+/*.log
+
+# Vercel
+/.vercel
